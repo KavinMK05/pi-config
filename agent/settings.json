@@ -1,0 +1,47 @@
+{
+  "collapseChangelog": false,
+  "compaction": {
+    "enabled": true
+  },
+  "defaultProjectTrust": "always",
+  "defaultThinkingLevel": "high",
+  "doubleEscapeAction": "tree",
+  "defaultTools": [
+    "+codemode",
+    "+grep",
+    "+find",
+    "+ls",
+    "+powershell"
+  ],
+  "enableInstallTelemetry": false,
+  "hideThinkingBlock": false,
+  "httpIdleTimeoutMs": 0,
+  "outputPad": 1,
+  "packages": [
+    {
+      "source": "npm:pi-searxng-search",
+      "extensions": []
+    },
+    {
+      "source": "npm:pi-smart-fetch",
+      "extensions": []
+    },
+    "npm:@tintinweb/pi-subagents",
+    "npm:@juicesharp/rpiv-todo",
+    "npm:pi-mcp-adapter",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    {
+      "source": "npm:donsetch",
+      "extensions": []
+    },
+    "npm:@plannotator/pi-extension"
+  ],
+  "quietStartup": true,
+  "steeringMode": "one-at-a-time",
+  "theme": "dark",
+  "tuiMode": "regular",
+  "extensions": [
+    "-builtin:mcp"
+  ],
+  "fullscreenCopyOnSelect": true
+}
