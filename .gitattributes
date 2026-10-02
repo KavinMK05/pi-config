@@ -1,4 +1,4 @@
-# Keep shell scripts LF even on Windows checkouts
+# Normalize line endings (CRLF for PowerShell)
 * text=auto eol=lf
 *.ps1 text eol=crlf
 *.bat text eol=crlf

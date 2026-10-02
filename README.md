@@ -26,7 +26,7 @@ config/
 skills/
   amazon-flipkart-scraping/  ->  ~/.agents/skills/               (custom, vendored)
   .skill-lock.json           ->  ~/.agents/.skill-lock.json      (sources of third-party skills)
-install.ps1 / install.sh     ->  convenience bootstrap for all of the above
+install.ps1                  ->  convenience bootstrap for all of the above
 ```
 
 ## The setup in one picture
@@ -67,24 +67,16 @@ Because that wrapper is the **only** thing registering these tools, the three pa
 its original name and shadow the wrapper.
 
 `web-tools-fallback.ts` resolves its imports through `~/.pi/agent/node_modules`, which is a
-junction/symlink to `~/.pi/agent/npm/node_modules`. Both install scripts create it.
+junction to `~/.pi/agent/npm/node_modules`. The install script creates it.
 
 ## Replicate on a new machine
 
 ### Option A — run the script
 
 ```powershell
-# Windows
 git clone https://github.com/KavinMK05/pi-config
 cd pi-config
 powershell -ExecutionPolicy Bypass -File .\install.ps1
-```
-
-```bash
-# macOS / Linux / WSL
-git clone https://github.com/KavinMK05/pi-config
-cd pi-config
-./install.sh
 ```
 
 ### Option B — do it by hand
@@ -99,8 +91,7 @@ cd pi-config
    cd ~/.pi/agent/npm && npm ci
    ```
    Then expose the module dir so the wrapper extension can import them:
-   - Windows: `cmd /c mklink /J %USERPROFILE%\.pi\agent\node_modules %USERPROFILE%\.pi\agent\npm\node_modules`
-   - Unix: `ln -s ~/.pi/agent/npm/node_modules ~/.pi/agent/node_modules`
+   Windows: `cmd /c mklink /J %USERPROFILE%\.pi\agent\node_modules %USERPROFILE%\.pi\agent\npm\node_modules`
 
    (If npm isn't available, copy the settings first and run `pi update --extensions`.)
 4. **Skills** — copy the vendored custom skill, then reinstall the third-party ones:
